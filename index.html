@@ -1,374 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PCFSEQJZ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4PCFSEQJZ1');
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello Texas — Red Dirt Roots Country</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Borrowed Whispers | Hello Texas Records</title>
+<link rel="manifest" href="manifest.json">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --black:#0A0805; --ink:#131009; --warm:#1A1510; --earth:#221C12;
-  --rust:#C8922A; --rust-lt:#E8AD4A; --rust-glow:rgba(200,146,42,0.2);
-  --cream:#F2EBD8; --tan:#C4A97C; --dust:#8A7E68; --white:#F8F2E4;
-  --accent:#C8922A; --accent-lt:#E8AD4A; --accent-glow:rgba(200,146,42,0.22);
-}
-html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--cream);font-family:'Barlow',sans-serif;font-weight:300;font-size:15px;line-height:1.7;overflow-x:hidden;}
-#topnav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:transparent;border-bottom:1px solid transparent;transition:background 0.4s,border-color 0.4s;}
-#topnav.scrolled{background:rgba(10,8,5,0.96);border-color:var(--rust-glow);backdrop-filter:blur(12px);}
-.nav-logo{height:38px;width:auto;mix-blend-mode:screen;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:var(--dust);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover{color:var(--rust-lt);}
-.hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 35%;background-repeat:no-repeat;}
-.hero-vignette{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,8,5,0.2) 0%,rgba(10,8,5,0) 35%,rgba(10,8,5,0.8) 75%,rgba(10,8,5,0.98) 100%),linear-gradient(to right,rgba(10,8,5,0.65) 0%,transparent 55%);}
-.hero-content{position:relative;z-index:2;padding:0 3.5rem 5rem;max-width:600px;}
-.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rust);margin-bottom:1rem;}
-.hero-logo-wrap{margin-bottom:1.5rem;}
-.hero-logo-wrap img{height:70px;width:auto;mix-blend-mode:screen;}
-.hero-tagline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:0.08em;color:var(--cream);opacity:0.85;margin-bottom:2rem;}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
-.cta-primary{background:var(--accent);color:var(--black);border:none;padding:0.8rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.15s;}
-.cta-primary:hover{background:var(--rust-lt);transform:translateY(-1px);}
-.cta-secondary{background:transparent;color:var(--cream);border:1px solid rgba(200,146,42,0.4);padding:0.8rem 2rem;text-decoration:none;display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;}
-.cta-secondary:hover{border-color:var(--rust);color:var(--rust-lt);}
-.section-header{text-align:center;padding:5rem 2rem 3.5rem;}
-.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);letter-spacing:0.08em;}
-.rust-rule{width:60px;height:2px;background:var(--rust);margin:1rem auto 0;opacity:0.7;}
-#bio{background:var(--ink);padding-bottom:5rem;}
-.bio-inner{max-width:680px;margin:0 auto;padding:0 2rem;text-align:center;}
-.bio-inner p{color:var(--tan);line-height:1.9;font-size:0.95rem;margin-bottom:1.2rem;}
-#latest-single{background:var(--earth);padding:5rem 0;border-top:1px solid var(--rust-glow);}
-.latest-inner{max-width:1060px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:380px 1fr;gap:4.5rem;align-items:center;}
-.latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,0.8);}
-.latest-badge{font-family:'Barlow Condensed',sans-serif;display:inline-block;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(200,146,42,0.4);padding:0.3rem 0.9rem;margin-bottom:1.2rem;}
-.latest-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);color:var(--white);line-height:1;margin-bottom:0.5rem;letter-spacing:0.06em;}
-.latest-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--dust);margin-bottom:2rem;}
-.latest-play-btn{display:inline-flex;align-items:center;gap:0.75rem;background:transparent;color:var(--accent);border:1px solid rgba(200,146,42,0.5);cursor:pointer;padding:0.85rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;transition:border-color 0.2s,background 0.2s;}
-.latest-play-btn:hover{background:var(--accent-glow);}
-.album-section{padding:5rem 0;border-top:1px solid var(--rust-glow);}
-.album-section:nth-child(odd){background:var(--warm);}
-.album-section:nth-child(even){background:var(--earth);}
-.album-layout{max-width:1040px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:340px 1fr;gap:4rem;align-items:start;}
-.album-layout.reverse{direction:rtl;}
-.album-layout.reverse>*{direction:ltr;}
-.album-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.7);}
-.album-badge{font-family:'Barlow Condensed',sans-serif;display:inline-block;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(200,146,42,0.4);padding:0.25rem 0.75rem;margin-bottom:1rem;}
-.album-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--white);line-height:1;margin-bottom:0.3rem;letter-spacing:0.06em;}
-.album-artist{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--dust);margin-bottom:1.5rem;}
-.tracklist{border-top:1px solid rgba(200,146,42,0.12);}
-.track-row{display:grid;grid-template-columns:2rem 1fr auto auto;align-items:center;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid rgba(200,146,42,0.07);transition:background 0.2s;}
-.track-row:hover{background:rgba(200,146,42,0.04);}
-.track-num{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;color:var(--dust);opacity:0.4;text-align:right;}
-.track-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--cream);letter-spacing:0.04em;}
-.track-badge{font-family:'Barlow Condensed',sans-serif;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.2rem 0.6rem;color:var(--accent);border:1px solid rgba(200,146,42,0.4);}
-.track-play-btn{background:transparent;border:1px solid rgba(200,146,42,0.3);color:var(--accent);width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.6rem;flex-shrink:0;transition:background 0.2s,border-color 0.2s;}
-.track-play-btn:hover{background:rgba(200,146,42,0.12);border-color:var(--rust);}
-.track-play-btn.playing{background:rgba(200,146,42,0.2);border-color:var(--rust-lt);}
-#singles{background:var(--ink);padding:5rem 0;border-top:1px solid var(--rust-glow);}
-.singles-grid{max-width:1040px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;}
-.single-card{cursor:pointer;}
-.single-img-wrap{position:relative;overflow:hidden;aspect-ratio:1;}
-.single-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.45s,filter 0.4s;filter:brightness(0.8);}
-.single-card:hover .single-img-wrap img{transform:scale(1.04);filter:brightness(1);}
-.single-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,8,5,0);transition:background 0.3s;}
-.single-card:hover .single-overlay{background:rgba(10,8,5,0.35);}
-.single-play-btn{width:52px;height:52px;border:2px solid var(--rust);background:rgba(10,8,5,0.6);color:var(--rust);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:scale(0.85);transition:opacity 0.25s,transform 0.25s;}
-.single-card:hover .single-play-btn,.single-play-btn.playing{opacity:1;transform:scale(1);}
-.single-info{padding:0.85rem 0 0;}
-.single-title{font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;letter-spacing:0.04em;color:var(--white);margin-bottom:0.2rem;}
-.single-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dust);opacity:0.65;}
-.single-badge{display:inline-block;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(200,146,42,0.4);padding:0.15rem 0.5rem;margin-left:0.4rem;vertical-align:middle;}
-#player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(10,8,5,0.97);border-top:1px solid rgba(200,146,42,0.25);backdrop-filter:blur(16px);grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:0.8rem 2rem;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);}
-#player.visible{transform:translateY(0);}
-.p-info{display:flex;align-items:center;gap:1rem;min-width:0;}
-.p-thumb{width:42px;height:42px;object-fit:cover;flex-shrink:0;border:1px solid rgba(200,146,42,0.2);}
-.p-title{font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;letter-spacing:0.04em;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.p-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--dust);opacity:0.55;}
-.p-controls{display:flex;align-items:center;flex-direction:column;flex:1;gap:0.5rem;min-width:0;}
-.p-btn-row{display:flex;align-items:center;gap:1.2rem;}
-.p-btn{background:transparent;border:none;color:var(--dust);cursor:pointer;font-size:0.9rem;padding:0.25rem;transition:color 0.2s;}
-.p-btn:hover{color:var(--rust-lt);}
-#p-playbtn{width:36px;height:36px;border:1px solid rgba(200,146,42,0.5);background:transparent;color:var(--rust);cursor:pointer;font-size:0.8rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
-#p-playbtn:hover{background:rgba(200,146,42,0.15);}
-.p-progress{display:flex;align-items:center;gap:0.75rem;width:100%;}
-.p-time{font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;color:var(--dust);opacity:0.55;white-space:nowrap;}
-#p-bar{flex:1;height:3px;background:rgba(200,146,42,0.15);cursor:pointer;position:relative;}
-#p-fill{height:100%;width:0%;background:linear-gradient(to right,var(--accent),var(--rust-lt));pointer-events:none;}
-.p-right{display:flex;align-items:center;gap:1rem;}
-#p-vol{width:72px;accent-color:var(--accent);}
-#p-close{background:transparent;border:none;color:var(--dust);cursor:pointer;font-size:1rem;opacity:0.5;transition:opacity 0.2s;}
-#p-close:hover{opacity:1;}
-footer{background:var(--black);border-top:1px solid var(--rust-glow);padding:4rem 2rem 3rem;text-align:center;}
-.foot-logo{height:52px;width:auto;mix-blend-mode:screen;margin-bottom:1.2rem;}
-.foot-label{font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--dust);opacity:0.4;margin-bottom:1.5rem;}
-.foot-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}
-.foot-links a{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dust);text-decoration:none;opacity:0.4;transition:opacity 0.2s,color 0.2s;}
-.foot-links a:hover{opacity:1;color:var(--rust-lt);}
-.loading-ph{text-align:center;padding:3rem;color:var(--dust);font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase;}
-
-#latest-video{background:var(--ink);padding:5rem 0;border-top:1px solid var(--rust-glow);}
-.video-inner{max-width:1040px;margin:0 auto;padding:0 2.5rem;}
-.video-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,0.8);}
-.video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-.album-tracks-wrap{max-width:1040px;margin:2.5rem auto 0;padding:0 2.5rem;}
-.album-tracks-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);letter-spacing:.08em;margin-bottom:1rem;}
-.album-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.95rem;}
-.song-card{cursor:pointer;min-width:0;}
-.song-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(.86);transition:filter .2s,transform .25s;}
-.song-card:hover img{filter:brightness(1);transform:scale(1.015);}
-.song-card h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--white);margin-top:.55rem;letter-spacing:.04em;}
-.song-card p{font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);}
-.video-pill{display:inline-block;margin-top:.35rem;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(200,146,42,0.35);padding:.15rem .45rem;text-decoration:none;}
-@media(max-width:768px){
-  .album-tracks-wrap{padding:0 1.8rem;}
-  .album-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;}
-}
-
-@media(max-width:768px){
-  .album-layout,.album-layout.reverse{grid-template-columns:1fr;direction:ltr;gap:2rem;}
-  .album-cover{max-width:300px;margin:0 auto;}
-  .latest-inner{grid-template-columns:1fr!important;gap:2rem;}
-  .hero-content{padding:0 1.8rem 3.5rem;}
-  .singles-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
-  #player{grid-template-columns:1fr;gap:0.5rem;}
-  .p-info{display:none;}
-}
+:root { --bg:#090806; --panel:#16120d; --gold:#d49a25; --cream:#f4efe5; --muted:#b7a98f; --border:rgba(212,154,37,.28); }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--cream); font-family:Arial, sans-serif; }
+header { position:sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center; padding:18px 28px; background:rgba(9,8,6,.94); border-bottom:1px solid var(--border); }
+.brand { color:var(--gold); letter-spacing:.18em; text-transform:uppercase; font-weight:800; font-size:.85rem; }
+nav a { margin-left:22px; text-decoration:none; color:var(--muted); text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; }
+main { max-width:1180px; margin:0 auto; padding:70px 24px 120px; }
+.hero { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr); gap:56px; align-items:center; min-height:520px; }
+.eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.35em; font-size:.72rem; font-weight:800; margin-bottom:18px; }
+h1 { font-size:clamp(3.4rem,8vw,7rem); line-height:.9; margin:0 0 24px; text-transform:uppercase; letter-spacing:.04em; }
+.genre { color:var(--muted); font-size:1.15rem; margin-bottom:24px; }
+.bio { max-width:720px; color:#d8cdbb; line-height:1.6; }
+.hero-card { min-height:360px; border:1px solid var(--border); border-radius:28px; background:linear-gradient(145deg,var(--panel),#0d0a07); display:flex; align-items:center; justify-content:center; }
+.actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+button,.btn { border:1px solid var(--border); padding:14px 24px; background:transparent; color:var(--cream); text-decoration:none; text-transform:uppercase; letter-spacing:.16em; font-weight:800; cursor:pointer; border-radius:999px; }
+.primary { background:var(--gold); color:#130f09; border-color:var(--gold); }
+section { margin-top:70px; }
+h2 { font-size:2.2rem; text-transform:uppercase; letter-spacing:.12em; }
+.latest-card,.album { border:1px solid var(--border); background:var(--panel); border-radius:24px; padding:24px; margin-top:20px; }
+.latest-inner { display:grid; grid-template-columns:160px 1fr; gap:24px; align-items:center; }
+.cover { width:160px; aspect-ratio:1/1; object-fit:cover; background:#221b12; border:1px solid var(--border); border-radius:14px; }
+.track-list { display:grid; gap:14px; margin-top:20px; }
+.track { display:grid; grid-template-columns:72px 1fr auto; gap:16px; align-items:center; padding:14px; border:1px solid rgba(212,154,37,.16); border-radius:16px; background:rgba(0,0,0,.16); }
+.track img { width:72px; height:72px; object-fit:cover; border-radius:10px; }
+.track-title { font-weight:800; }
+.track-meta { color:var(--muted); font-size:.9rem; margin-top:4px; }
+.video-pill { display:inline-block; border:1px solid var(--border); padding:8px 12px; border-radius:999px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; }
+.bottom-player { position:fixed; left:0; right:0; bottom:0; background:#090806; border-top:1px solid var(--border); display:none; grid-template-columns:56px 1fr auto; gap:12px; align-items:center; padding:12px 18px; z-index:20; }
+.bottom-player.is-visible { display:grid; }
+.bottom-player img { width:56px; height:56px; object-fit:cover; border-radius:8px; }
+audio { width:min(420px,45vw); }
+@media(max-width:800px) { .hero,.latest-inner { grid-template-columns:1fr; } .track { grid-template-columns:60px 1fr; } .track .video-wrap { grid-column:1/-1; } }
 </style>
 </head>
 <body>
-<nav id="topnav">
-  <img class="nav-logo" src="images/logos/hello-texas-logo.png" alt="Hello Texas">
-  <ul class="nav-links">
-    <li><a href="#bio">About</a></li>
-    <li><a href="#albums">Music</a></li>
-    
-    <li><a href="https://stevep999.github.io/hello-texas-records/" target="_blank" style="opacity:0.45;font-size:0.72rem;">Hello Texas Records</a></li>
-  </ul>
-</nav>
+<header><div class="brand">Hello Texas Records</div><nav><a href="#latest">Latest</a><a href="#albums">Albums</a><a href="#videos">Videos</a></nav></header>
+<main>
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('images/artist/hero-background.png');"></div>
-  <div class="hero-vignette"></div>
-  <div class="hero-content">
-    <div class="hero-label">Hello Texas Records</div>
-    <div class="hero-logo-wrap">
-      <img src="images/logos/hello-texas-logo.png" alt="Hello Texas">
-    </div>
-    <p class="hero-tagline">Red Dirt. Roots Country. Texas Loud.</p>
-    <div class="hero-ctas">
-      <button class="cta-primary" id="hero-play-btn">&#9654;&nbsp; Play Latest Single</button>
-      <a href="#albums" class="cta-secondary">Discography</a>
-    </div>
-  </div>
-</section>
-<section id="bio">
-  <div class="section-header">
-    <div class="section-eyebrow">About the Band</div>
-    <h2 class="section-title">Hello Texas</h2>
-    <div class="rust-rule"></div>
-  </div>
-  <div class="bio-inner">
-    <p>Hello Texas makes Red Dirt country music the way Texas intended — loud when it needs to be, quiet when it earns it, and always honest about where it came from.</p>
-    <p>Equal parts honky tonk swagger and backroad soul, their catalog runs from rowdy anthems to late-night confessions. The kind of band that sounds like the state they're named after.</p>
-    <p>Signed to Hello Texas Records, the flagship act of the label they share a name with.</p>
-  </div>
-</section>
-<section id="latest-single">
-  <div class="section-header">
-    <div class="section-eyebrow">Latest Single</div>
-    <h2 class="section-title" id="latest-section-title">Loading…</h2>
-    <div class="rust-rule"></div>
-  </div>
-  <div class="latest-inner">
-    <div><img id="latest-cover" src="" alt="" class="latest-cover"></div>
-    <div>
-      <div class="latest-badge">Latest Single</div>
-      <h2 class="latest-title" id="latest-title">—</h2>
-      <div class="latest-sub" id="latest-sub">Hello Texas</div>
-      <button class="latest-play-btn" id="latest-play-btn">&#9654;&nbsp; Play Now</button>
-    </div>
-  </div>
-</section>
-
-<section id="latest-video">
-  <div class="section-header">
-    <div class="section-eyebrow">Latest Video</div>
-    <h2 class="section-title">Fade Out</h2>
-    <div class="rust-rule"></div>
-  </div>
-  <div class="video-inner">
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/PWrSeRbevPo" title="Fade Out Official Video" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
-
-<div id="albums"><div class="loading-ph" id="albums-loading">Loading music…</div></div>
-
-<footer>
-  <img src="images/logos/hello-texas-logo.png" alt="Hello Texas" class="foot-logo">
-  <div class="foot-label">Hello Texas Records</div>
-  <div class="foot-links">
-    <a href="#" target="_blank">Spotify</a>
-    <a href="#" target="_blank">Apple Music</a>
-    <a href="#" target="_blank">YouTube</a>
-    <a href="#" target="_blank">Instagram</a>
-    <a href="https://stevep999.github.io/hello-texas-records/" target="_blank">Label</a>
-  </div>
-</footer>
-<audio id="audio" playsinline preload="none"></audio>
-<div id="player">
-  <div class="p-info">
-    <img id="p-thumb" src="" alt="" class="p-thumb">
-    <div><div id="p-title" class="p-title">—</div><div id="p-sub" class="p-sub">Hello Texas</div></div>
-  </div>
-  <div class="p-controls">
-    <div class="p-btn-row">
-      <button class="p-btn" id="p-prev">&#9664;&#9664;</button>
-      <button id="p-playbtn">&#9654;</button>
-      <button class="p-btn" id="p-next">&#9654;&#9654;</button>
-    </div>
-    <div class="p-progress">
-      <span class="p-time" id="p-cur">0:00</span>
-      <div id="p-bar"><div id="p-fill"></div></div>
-      <span class="p-time" id="p-dur">0:00</span>
-    </div>
-  </div>
-  <div class="p-right">
-    <input type="range" id="p-vol" min="0" max="1" step="0.02" value="0.85">
-    <button id="p-close">&#x2715;</button>
-  </div>
+<div>
+<div class="eyebrow">Hello Texas Records Artist</div>
+<h1>Borrowed Whispers</h1>
+<div class="genre">70s-80s Soft Rock, Soul</div>
+<p class="bio">Borrowed Whispers is part of the Hello Texas Records roster.</p>
+<div class="actions"><button class="primary" onclick="playLatest()">Listen Now</button><a class="btn" href="https://hellotexasrecords.com">Label Home</a></div>
 </div>
+<div class="hero-card"><span>Artist image managed on label roster</span></div>
+</section>
+<section id="latest"><h2>Latest Release</h2><div id="latest-release" class="latest-card"></div></section>
+<section id="albums"><h2>Albums</h2><div id="album-list"></div></section>
+<section id="videos"><h2>Videos</h2><div id="video-list" class="track-list"></div></section>
+</main>
+<div id="bottom-player" class="bottom-player"><img id="player-cover" alt=""><div><div id="player-title" class="track-title"></div><div id="player-meta" class="track-meta"></div></div><audio id="audio" controls></audio></div>
+<script id="artist-data" type="application/json">{"artist": {"id": "borrowed-whispers", "name": "Borrowed Whispers", "genre": "70s-80s Soft Rock, Soul", "bio": "Borrowed Whispers is part of the Hello Texas Records roster.", "labelRosterPhoto": "Roster Photos/borrowed-whispers-roster-photo.png"}, "latest": {"title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "type": "Latest Single", "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "image": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": []}, "songs": [{"id": "borrowed-whispers-still-falling-for-you", "num": "01", "title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "albumCover": "images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": true, "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}]}</script>
 <script>
-const ARTIST='Hello Texas';
-const SONGS_URL='songs.json',LATEST_URL='latest.json';
-let SONGS=[],ORDER=[],cur=null;
-const audio=document.getElementById('audio'),player=document.getElementById('player'),pThumb=document.getElementById('p-thumb');
-function fmt(s){if(!isFinite(s)||isNaN(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-function getSong(id){return SONGS.find(s=>s.id===id);}
-function setAllBtns(id,playing){
-  document.querySelectorAll('[data-play-id]').forEach(btn=>{
-    btn.innerHTML=(playing&&btn.dataset.playId===id)?'&#9646;&#9646;':'&#9654;';
-    btn.classList.toggle('playing',playing&&btn.dataset.playId===id);
-  });
-  document.getElementById('p-playbtn').innerHTML=playing?'&#9646;&#9646;':'&#9654;';
+const DATA = JSON.parse(document.getElementById('artist-data').textContent);
+function esc(value) { return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch])); }
+function videoMarkup(song) {
+  const videos = Array.isArray(song.videos) ? song.videos : [];
+  if (!videos.length) return '<span class="video-pill">Video Coming Soon</span>';
+  const first = videos[0];
+  const url = first.youtube || first.url || first.href || '';
+  if (!url) return '<span class="video-pill">Video Coming Soon</span>';
+  return `<a class="video-pill" target="_blank" rel="noreferrer" href="${esc(url)}">Watch Video</a>`;
 }
-function playById(id){
-  const song=getSong(id);if(!song||!song.audio)return;
-  if(cur===id){if(audio.paused){audio.play().catch(()=>{});setAllBtns(id,true);}else{audio.pause();setAllBtns(id,false);}return;}
-  cur=id;
-  gtag('event','song_play',{artist:ARTIST,song_title:song.title,album:song.album,player_type:'artist_site'});
-  audio.removeAttribute('crossorigin');audio.src=song.audio;
-  document.getElementById('p-title').textContent=song.title;
-  document.getElementById('p-sub').textContent=song.album||ARTIST;
-  if(song.cover)pThumb.src=song.cover;
-  player.style.display='grid';setTimeout(()=>player.classList.add('visible'),10);
-  setAllBtns(id,true);audio.load();
-  const pp=audio.play();if(pp)pp.catch(()=>{audio.addEventListener('canplaythrough',function h(){audio.removeEventListener('canplaythrough',h);audio.play().catch(()=>{});});});
+function songCover(song) { return song.cover || song.albumCover || ''; }
+function renderLatest() {
+  const latest = DATA.songs.find(s => s.isLatest) || DATA.songs[0];
+  const el = document.getElementById('latest-release');
+  if (!latest) { el.innerHTML = '<p class="track-meta">New music coming soon.</p>'; return; }
+  el.innerHTML = `<div class="latest-inner"><img class="cover" src="${esc(songCover(latest))}" alt="${esc(latest.title)}"><div><div class="eyebrow">${esc(latest.type || 'Latest Release')}</div><h3>${esc(latest.title)}</h3><div class="track-meta">${esc(latest.album || '')}</div><div class="actions"><button class="primary" onclick="playSong('${esc(latest.id)}')">Play</button>${videoMarkup(latest)}</div></div></div>`;
 }
-audio.addEventListener('ended',()=>{if(!cur||!ORDER.length)return;const idx=ORDER.indexOf(cur);playById(ORDER[(idx+1)%ORDER.length]);});
-audio.addEventListener('timeupdate',()=>{const pct=audio.duration?(audio.currentTime/audio.duration)*100:0;document.getElementById('p-fill').style.width=pct+'%';document.getElementById('p-cur').textContent=fmt(audio.currentTime);document.getElementById('p-dur').textContent=fmt(audio.duration);});
-document.getElementById('p-playbtn').addEventListener('click',()=>{if(!cur)return;if(audio.paused){audio.play().catch(()=>{});setAllBtns(cur,true);}else{audio.pause();setAllBtns(cur,false);}});
-document.getElementById('p-prev').addEventListener('click',()=>{if(!cur||!ORDER.length)return;if(audio.currentTime>3){audio.currentTime=0;return;}const idx=ORDER.indexOf(cur);playById(ORDER[(idx-1+ORDER.length)%ORDER.length]);});
-document.getElementById('p-next').addEventListener('click',()=>{if(!cur||!ORDER.length)return;const idx=ORDER.indexOf(cur);playById(ORDER[(idx+1)%ORDER.length]);});
-document.getElementById('p-bar').addEventListener('click',e=>{if(!audio.duration)return;const r=e.currentTarget.getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;});
-document.getElementById('p-vol').addEventListener('input',e=>{audio.volume=+e.target.value;});
-document.getElementById('p-close').addEventListener('click',()=>{audio.pause();player.classList.remove('visible');setTimeout(()=>{player.style.display='none';},350);setAllBtns(cur,false);cur=null;});
-
-function videoButton(song){
-  if(song.videos&&song.videos.length){
-    return `<a class="video-pill" href="${song.videos[0].youtube}" target="_blank">Watch Video</a>`;
-  }
-  return `<span class="video-pill">Video Coming Soon</span>`;
+function renderAlbums() {
+  const albums = new Map();
+  DATA.songs.forEach(song => { const album = song.album || 'Singles'; if (!albums.has(album)) albums.set(album, []); albums.get(album).push(song); });
+  document.getElementById('album-list').innerHTML = Array.from(albums.entries()).map(([album, songs]) => `<article class="album"><h3>${esc(album)}</h3><div class="eyebrow">Album Tracks</div><div class="track-list">${songs.map(song => `<div class="track"><img src="${esc(songCover(song))}" alt="${esc(song.title)}"><div><div class="track-title">${esc(song.title)}</div><div class="track-meta">${esc(song.artist)} • ${esc(song.album)}</div></div><div class="video-wrap"><button onclick="playSong('${esc(song.id)}')">Play</button> ${videoMarkup(song)}</div></div>`).join('')}</div></article>`).join('');
 }
-function buildAlbums(songs){
-  const map=new Map();
-  songs.forEach(s=>{if(!map.has(s.album))map.set(s.album,[]);map.get(s.album).push(s);});
-  const container=document.getElementById('albums');
-  container.innerHTML='';
-  let i=0;
-  map.forEach((tracks,name)=>{
-    const cover=tracks[0].albumCover||tracks[0].cover;
-    const isReverse=i%2===1;
-    const sec=document.createElement('section');
-    sec.className='album-section';
-    sec.innerHTML=`<div class="album-layout${isReverse?' reverse':''}">
-      <div><img src="${cover}" alt="${name}" class="album-cover"></div>
-      <div style="padding-top:0.5rem;">
-        <div class="album-badge">Album</div>
-        <h2 class="album-title">${name}</h2>
-        <div class="album-artist">${ARTIST}</div>
-        <div class="tracklist">
-          ${tracks.map(t=>`<div class="track-row">
-            <span class="track-num">${t.num||''}</span>
-            <span class="track-title">${t.title}</span>
-            <span>${t.isLatest?'<span class="track-badge">Latest</span>':''}</span>
-            <button class="track-play-btn" data-play-id="${t.id}" onclick="playById('${t.id}')">&#9654;</button>
-          </div>`).join('')}
-        </div>
-      </div>
-    </div>
-    <div class="album-tracks-wrap">
-      <h3 class="album-tracks-title">Album Tracks</h3>
-      <div class="album-cards">
-        ${tracks.map(t=>`<div class="song-card">
-          <img src="${t.cover}" alt="${t.title}" loading="lazy" onclick="playById('${t.id}')">
-          <h4>${t.title}</h4>
-          <p>${t.album}</p>
-          ${videoButton(t)}
-        </div>`).join('')}
-      </div>
-    </div>`;
-    container.appendChild(sec);
-    i++;
-  });
+function renderVideos() {
+  document.getElementById('video-list').innerHTML = DATA.songs.map(song => `<div class="track"><img src="${esc(songCover(song))}" alt="${esc(song.title)}"><div><div class="track-title">${esc(song.title)}</div><div class="track-meta">${esc(song.album || '')}</div></div><div class="video-wrap">${videoMarkup(song)}</div></div>`).join('');
 }
-
-function buildSingles(songs){
-  document.getElementById('singles-grid').innerHTML=songs.map(s=>`
-    <div class="single-card" onclick="playById('${s.id}')">
-      <div class="single-img-wrap">
-        <img src="${s.cover}" alt="${s.title}" loading="lazy">
-        <div class="single-overlay"><button class="single-play-btn" data-play-id="${s.id}">&#9654;</button></div>
-      </div>
-      <div class="single-info">
-        <div class="single-title">${s.title}</div>
-        <div class="single-sub">${s.album}${s.isLatest?'<span class="single-badge">Latest</span>':''}</div>
-      </div>
-    </div>`).join('');
+function playLatest() { const latest = DATA.songs.find(s => s.isLatest) || DATA.songs[0]; if (latest) playSong(latest.id); }
+function playSong(id) {
+  const song = DATA.songs.find(s => s.id === id);
+  if (!song || !song.audio) return;
+  document.getElementById('bottom-player').classList.add('is-visible');
+  document.getElementById('player-cover').src = songCover(song);
+  document.getElementById('player-cover').alt = song.title;
+  document.getElementById('player-title').textContent = song.title;
+  document.getElementById('player-meta').textContent = `${song.artist} • ${song.album || ''}`;
+  const audio = document.getElementById('audio');
+  audio.src = song.audio;
+  audio.play();
 }
-function updateLatest(song){
-  if(!song)return;
-  document.getElementById('latest-section-title').textContent=song.title;
-  document.getElementById('latest-title').textContent=song.title;
-  document.getElementById('latest-sub').textContent=`${ARTIST} · ${song.album||''}`;
-  const cv=document.getElementById('latest-cover');cv.src=song.cover||'';cv.alt=song.title;
-  const lb=document.getElementById('latest-play-btn');lb.onclick=()=>playById(song.id);lb.dataset.playId=song.id;
-  const hb=document.getElementById('hero-play-btn');hb.textContent=`▶  Play ${song.title}`;hb.onclick=()=>playById(song.id);
-}
-async function init(){
-  try{
-    const res=await fetch(`${SONGS_URL}?cb=${Date.now()}`);
-    SONGS=await res.json();ORDER=SONGS.map(s=>s.id);
-    buildAlbums(SONGS);
-    const latest=SONGS.find(s=>s.isLatest)||SONGS[SONGS.length-1];
-    updateLatest(latest);
-    try{const lr=await fetch(`${LATEST_URL}?cb=${Date.now()}`);const ld=await lr.json();if(ld.title){const m=SONGS.find(s=>s.title===ld.title);if(m)updateLatest(m);}}catch(e){}
-  }catch(e){document.getElementById('albums-loading').textContent='Music unavailable.';}
-}
-init();
-window.addEventListener('scroll',()=>{document.getElementById('topnav').classList.toggle('scrolled',window.scrollY>60);});
+renderLatest(); renderAlbums(); renderVideos();
 </script>
 </body>
 </html>

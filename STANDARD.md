@@ -1,10 +1,1 @@
-# Hello Texas Records Artist Standard
-
-- Album Tracks below each album
-- Mandatory video system except Lucas Harlow
-- videos: [] on every song
-- No Singles / Featured Tracks / All Tracks dumps
-- Standard image structure:
-  - images/covers/
-  - images/artist/
-  - images/logos/
+# Hello Texas Records Artist Standard\n\nLOCKED RULES:\n- Roster photos live in Hello-Texas-Records/Roster Photos/.\n- Artist repo images are images/covers/ and images/logos/.\n- Every song object includes videos: [].\n- Album Tracks render beneath each album.\n- No Featured Tracks, All Tracks, or Singles dump sections.\n- If videos exist, show Watch Video. If empty, show Video Coming Soon.\n
