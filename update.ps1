@@ -22,9 +22,7 @@ try {
 
     Write-Both "Checking Git..."
     $git = Get-Command git -ErrorAction SilentlyContinue
-    if (-not $git) {
-        throw "Git is not installed or not available in PATH."
-    }
+    if (-not $git) { throw "Git is not installed or not available in PATH." }
 
     if (-not (Test-Path ".git")) {
         Write-Both "No .git folder found. Initializing repo..."
