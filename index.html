@@ -366,6 +366,55 @@ a{color:inherit}
 .photo-strip img.missing{display:none}
 .photo-strip.empty{display:none}
 
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.5rem;
+  padding:1.5rem;
+}
+.video-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.22);
+  transition:transform .2s,border-color .2s,background .2s;
+}
+.video-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--accent);
+  background:rgba(0,0,0,.34);
+}
+.video-embed-wrap{
+  position:relative;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  background:#000;
+}
+.video-embed-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.video-card-title{
+  font-family:'Bebas Neue',serif;
+  font-size:1.2rem;
+  color:var(--white);
+  padding:1rem 1rem .15rem;
+  text-transform:uppercase;
+}
+.video-card-actions{
+  padding:.45rem 1rem 1rem;
+}
+.video-card-sub{
+  font-family:'Barlow Condensed',serif;
+  font-size:.62rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  padding:0 1rem 1rem;
+}
+
 #player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:color-mix(in srgb,var(--black) 97%, transparent);border-top:1px solid var(--line);backdrop-filter:blur(16px);grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 #player.visible{display:grid;transform:translateY(0)}
 .p-info{display:flex;align-items:center;gap:1rem;min-width:0}
@@ -823,7 +872,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 
 <div id="albums"></div>
 
-<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Latest Video</div><h2 class="section-title">Video Coming Soon</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
+<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Watch</div><h2 class="section-title">Videos</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
 
 <section id="bio">
   <div class="section-header">
@@ -869,7 +918,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 </div>
 
 <audio id="audio"></audio>
-<script id="artist-data" type="application/json">{"artist": {"id": "borrowed-whispers", "name": "Borrowed Whispers", "genre": "70s-80s Soft Rock, Soul", "tagline": "Borrowed Whispers is part of the Hello Texas Records roster.", "bio": "Borrowed Whispers is part of the Hello Texas Records roster.", "theme": "rock", "logo": "images/logos/borrowed-whispers-logo.png", "hero": "images/artist/borrowed-whispers-hero-photo.png", "discographyBg": "images/artist/borrowed-whispers-discography-bg.png", "videoBg": "images/artist/borrowed-whispers-video-bg.png", "photos": ["images/artist/borrowed-whispers-photo-1.png", "images/artist/borrowed-whispers-photo-2.png", "images/artist/borrowed-whispers-photo-3.png"]}, "latest": {"title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "type": "Latest Single", "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "image": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": []}, "songs": [{"id": "borrowed-whispers-still-falling-for-you", "num": "01", "title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "albumCover": "images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": true, "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
+<script id="artist-data" type="application/json">{"artist": {"id": "borrowed-whispers", "name": "Borrowed Whispers", "genre": "70s-80s Soft Rock, Soul", "tagline": "Borrowed Whispers is part of the Hello Texas Records roster.", "bio": "Borrowed Whispers is part of the Hello Texas Records roster.", "theme": "rock", "logo": "images/logos/borrowed-whispers-logo.png", "hero": "images/artist/borrowed-whispers-hero-photo.png", "discographyBg": "images/artist/borrowed-whispers-discography-bg.png", "videoBg": "images/artist/borrowed-whispers-video-bg.png", "photos": ["images/artist/borrowed-whispers-photo-1.png", "images/artist/borrowed-whispers-photo-2.png", "images/artist/borrowed-whispers-photo-3.png"]}, "latest": {"title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "type": "Latest Single", "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "image": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": []}, "songs": [{"id": "borrowed-whispers-still-falling-for-you", "num": "01", "title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 1, "albumOrder": 1, "albumCover": "images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": true, "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('artist-data').textContent);
 const SONGS = DATA.songs || [];
@@ -884,6 +933,26 @@ function videoUrl(song) {
   const videos = Array.isArray(song.videos) ? song.videos : [];
   if (!videos.length) return '';
   return videos[0].youtube || videos[0].url || videos[0].href || '';
+}
+function youtubeEmbedUrl(url) {
+  const value = String(url || '').trim();
+  if (!value) return '';
+  try {
+    const u = new URL(value);
+    let id = '';
+    if (u.hostname.includes('youtu.be')) {
+      id = u.pathname.replace('/', '');
+    } else if (u.searchParams.get('v')) {
+      id = u.searchParams.get('v');
+    } else if (u.pathname.includes('/embed/')) {
+      id = u.pathname.split('/embed/')[1].split('/')[0];
+    } else if (u.pathname.includes('/shorts/')) {
+      id = u.pathname.split('/shorts/')[1].split('/')[0];
+    }
+    return id ? `https://www.youtube.com/embed/${id}` : value;
+  } catch (e) {
+    return value;
+  }
 }
 function videoMarkup(song) {
   const url = videoUrl(song);
@@ -910,17 +979,45 @@ function renderLatest() {
 function renderVideo() {
   const container = document.getElementById('video-render');
   if (!container) return;
-  const song = SONGS.find(s => videoUrl(s)) || SONGS.find(s => s.isLatest) || SONGS[0];
-  if (!song || !videoUrl(song)) {
+
+  const videoSongs = SONGS
+    .filter(s => videoUrl(s))
+    .sort((a, b) => {
+      const av = Array.isArray(a.videos) && a.videos.length ? (a.videos[0].order ?? a.videos[0].videoOrder ?? 9999) : 9999;
+      const bv = Array.isArray(b.videos) && b.videos.length ? (b.videos[0].order ?? b.videos[0].videoOrder ?? 9999) : 9999;
+      return parseInt(av, 10) - parseInt(bv, 10) || String(a.title || '').localeCompare(String(b.title || ''));
+    });
+
+  if (!videoSongs.length) {
     container.innerHTML = '<div class="video-coming-soon visible"><div class="play-triangle"></div><strong>Video Coming Soon</strong><span>' + esc(DATA.artist.name) + ' does not have a video assigned yet. The video system is installed and ready.</span></div>';
     return;
   }
-  const thumb = song.cover || song.albumCover || '';
+
   container.innerHTML = `
-    <div class="video-thumb has-video" onclick="window.open('${esc(videoUrl(song))}','_blank')">
-      <img src="${esc(thumb)}" alt="${esc(song.title)} video">
-      <div class="video-play-overlay"><div class="video-play-circle">&#9654;</div></div>
-    </div>`;
+    <div class="video-grid">
+      ${videoSongs.map(song => `
+        <div class="video-card video-card-embed">
+          <div class="video-embed-wrap">
+            <iframe
+              src="${esc(youtubeEmbedUrl(videoUrl(song)))}"
+              title="${esc(song.title)} video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-card-title">${esc(song.title)}</div>
+          <div class="video-card-actions">
+            <a class="track-badge" href="${esc(videoUrl(song))}" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+function trackOrder(song) {
+  const raw = song.trackNumber ?? song.albumOrder ?? song.num ?? 9999;
+  const n = parseInt(raw, 10);
+  return Number.isFinite(n) ? n : 9999;
 }
 function renderAlbums() {
   const root = document.getElementById('albums');
@@ -941,11 +1038,12 @@ function renderAlbums() {
   let html = '<div class="discography-header"><div class="section-eyebrow">Latest Releases</div><h2 class="section-title">Discography</h2><div class="rule"></div></div>';
 
   Array.from(albums.entries()).forEach(([album, songs], idx) => {
-    const cover = songs.find(s => s.albumCover)?.albumCover || songCover(songs[0]) || '';
+    const orderedSongs = [...songs].sort((a, b) => trackOrder(a) - trackOrder(b) || String(a.title || '').localeCompare(String(b.title || '')));
+    const cover = orderedSongs.find(s => s.albumCover)?.albumCover || songCover(orderedSongs[0]) || '';
     const sideClass = idx % 2 ? 'cover-right' : 'cover-left';
 
-    const trackRows = songs.map((song, i) => {
-      const latestBadge = song.isLatest ? '<span class="track-badge">Latest</span>' : '';
+    const trackRows = orderedSongs.map((song, i) => {
+      const latestBadge = (song.isLatest ? '<span class="track-badge">Latest</span>' : '') + (videoUrl(song) ? ' <a class="track-badge" target="_blank" rel="noreferrer" href="' + esc(videoUrl(song)) + '">Watch Video</a>' : '');
       return `
         <div class="track-row">
           <div class="track-num">${String(i + 1).padStart(2, '0')}</div>
@@ -956,7 +1054,7 @@ function renderAlbums() {
       `;
     }).join('');
 
-    const songCards = songs.map(song => `
+    const songCards = orderedSongs.map(song => `
       <div class="release-card" onclick="playSongById('${esc(song.id)}')">
         <div class="release-art">
           <img src="${esc(songCover(song))}" alt="${esc(song.title)}">
@@ -964,6 +1062,7 @@ function renderAlbums() {
         </div>
         <div class="release-title">${esc(song.title)}</div>
         <div class="release-album">${esc(song.album || '')}</div>
+        ${videoUrl(song) ? `<a class="track-badge" target="_blank" rel="noreferrer" href="${esc(videoUrl(song))}" onclick="event.stopPropagation()">Watch Video</a>` : ''}
       </div>
     `).join('');
 
