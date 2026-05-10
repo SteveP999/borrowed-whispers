@@ -19,7 +19,6 @@ Set-Content -Path $LogPath -Value @(
 
 try {
     Set-Location $PSScriptRoot
-
     Write-Both "Checking Git..."
     $git = Get-Command git -ErrorAction SilentlyContinue
     if (-not $git) { throw "Git is not installed or not available in PATH." }
@@ -33,7 +32,6 @@ try {
         Write-Both "Existing .git folder found."
         $remote = ""
         try { $remote = git remote get-url origin } catch { $remote = "" }
-
         if ([string]::IsNullOrWhiteSpace($remote)) {
             Write-Both "No origin remote found. Adding origin..."
             git remote add origin $RepoUrl | Tee-Object -FilePath $LogPath -Append
@@ -41,7 +39,6 @@ try {
             Write-Both "Origin remote is wrong. Replacing it."
             git remote set-url origin $RepoUrl | Tee-Object -FilePath $LogPath -Append
         }
-
         git branch -M main | Tee-Object -FilePath $LogPath -Append
     }
 
@@ -70,7 +67,6 @@ try {
         Write-Both ""
         $msg = Read-Host "Commit message (Enter = update artist site)"
         if ([string]::IsNullOrWhiteSpace($msg)) { $msg = "update artist site" }
-
         Write-Both "Committing..."
         git commit -m $msg | Tee-Object -FilePath $LogPath -Append
     } else {
@@ -80,7 +76,6 @@ try {
     Write-Both ""
     Write-Both "Pushing to GitHub..."
     git push -u origin main | Tee-Object -FilePath $LogPath -Append
-
     Write-Both ""
     Write-Both "SUCCESS: $RepoName pushed to GitHub."
 }
@@ -91,6 +86,5 @@ catch {
     Write-Both ""
     Write-Both "See update-log.txt in this folder."
 }
-
 Write-Host ""
 Read-Host "Press Enter to close"
