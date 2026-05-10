@@ -19,9 +19,9 @@ gtag('config', 'G-4PCFSEQJZ1');
 :root{
 --black:#030508;--ink:#060B14;--deep:#080E1C;--mid:#0C1428;
 --accent:#D4902A;--accent-lt:#EAB050;--cream:#E8E0D0;--muted:#505870;--white:#F4F0E8;
---accent-glow:color-mix(in srgb, var(--accent) 28%, transparent);
---line:color-mix(in srgb, var(--accent) 32%, transparent);
---faded-line:color-mix(in srgb, var(--accent) 14%, transparent);
+--accent-glow:color-mix(in srgb, var(--accent) 30%, transparent);
+--line:color-mix(in srgb, var(--accent) 36%, transparent);
+--faded-line:color-mix(in srgb, var(--accent) 16%, transparent);
 --radius:0px;
 }
 html{scroll-behavior:smooth}
@@ -34,25 +34,13 @@ body{
   line-height:1.75;
   overflow-x:hidden;
 }
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  opacity:.18;
-  background:
-    radial-gradient(circle at 50% 8%, var(--accent-glow), transparent 34%),
-    radial-gradient(circle at 12% 82%, rgba(255,255,255,.04), transparent 25%),
-    radial-gradient(circle at 90% 60%, var(--accent-glow), transparent 28%);
-}
 body::after{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   z-index:0;
-  opacity:.12;
+  opacity:.10;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
   background-size:220px 220px;
 }
@@ -61,23 +49,23 @@ a{color:inherit}
   position:fixed;
   top:0;left:0;right:0;
   z-index:100;
-  height:64px;
+  height:68px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 2rem;
-  background:rgba(0,0,0,.72);
-  border-bottom:1px solid var(--faded-line);
+  padding:0 3rem;
+  background:rgba(0,0,0,.78);
+  border-bottom:1px solid var(--line);
   backdrop-filter:blur(14px);
 }
 .nav-left,.nav-right{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-left a,.nav-right a{
   color:var(--cream);
-  opacity:.82;
+  opacity:.88;
   text-decoration:none;
   font-family:'Barlow Condensed',serif;
   font-size:.78rem;
-  letter-spacing:.21em;
+  letter-spacing:.22em;
   text-transform:uppercase;
   transition:color .2s,opacity .2s;
 }
@@ -85,9 +73,9 @@ a{color:inherit}
 
 .stage{
   position:relative;
-  min-height:82vh;
+  min-height:650px;
   overflow:hidden;
-  border-bottom:1px solid var(--faded-line);
+  border-bottom:1px solid var(--line);
   background:var(--black);
 }
 .stage-bg{
@@ -95,37 +83,37 @@ a{color:inherit}
   inset:0;
   background-image:url('images/artist/borrowed-whispers-hero-photo.png');
   background-size:cover;
-  background-position:center 44%;
+  background-position:center 48%;
   background-repeat:no-repeat;
-  filter:brightness(.32) contrast(1.08);
-  transform:scale(1.035);
+  filter:brightness(.72) contrast(1.08) sepia(.08);
+  transform:scale(1.025);
 }
 .stage-bg::after{
   content:"";
   position:absolute;
   inset:0;
   background:
-    linear-gradient(to bottom,rgba(0,0,0,.78) 0%,rgba(0,0,0,.34) 34%,rgba(0,0,0,.76) 76%,rgba(0,0,0,.98) 100%),
-    radial-gradient(ellipse 62% 36% at 50% 24%,rgba(255,255,255,.16),transparent 62%),
-    linear-gradient(to right,rgba(0,0,0,.62),transparent 24%,transparent 76%,rgba(0,0,0,.68));
+    linear-gradient(to bottom,rgba(0,0,0,.48) 0%,rgba(0,0,0,.16) 34%,rgba(0,0,0,.48) 74%,rgba(0,0,0,.88) 100%),
+    radial-gradient(ellipse 62% 38% at 50% 24%,rgba(255,255,255,.16),transparent 62%),
+    linear-gradient(to right,rgba(0,0,0,.46),transparent 28%,transparent 72%,rgba(0,0,0,.50));
 }
 .stage-inner{
   position:relative;
   z-index:2;
-  min-height:82vh;
+  min-height:650px;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:center;
   align-items:center;
   text-align:center;
-  padding:7.25rem 2rem 3rem;
+  padding:6rem 2rem 3rem;
 }
 .stage-logo img{
-  width:min(980px,94vw);
-  max-height:360px;
+  width:min(1080px,94vw);
+  max-height:410px;
   object-fit:contain;
   mix-blend-mode:screen;
-  filter:brightness(1.28) drop-shadow(0 0 32px rgba(0,0,0,.82));
+  filter:brightness(1.38) drop-shadow(0 0 34px rgba(0,0,0,.82));
 }
 .stage-title-fallback{
   display:none;
@@ -138,7 +126,7 @@ a{color:inherit}
   margin-bottom:1.2rem;
 }
 .stage-tag{
-  margin-top:1.1rem;
+  margin-top:1.2rem;
   color:var(--accent);
   font-family:'Barlow Condensed',serif;
   font-size:.72rem;
@@ -147,13 +135,14 @@ a{color:inherit}
 }
 .stage-tagline{
   max-width:760px;
-  margin:.85rem auto 1.45rem;
+  margin:.75rem auto 1.35rem;
   color:var(--cream);
   font-family:'Anton',serif;
   font-size:clamp(1.1rem,2vw,1.65rem);
   font-style:italic;
-  opacity:.92;
+  opacity:.95;
   line-height:1.45;
+  text-shadow:0 4px 18px rgba(0,0,0,.7);
 }
 .stage-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .cta-primary,.latest-play-btn,.track-play-btn,.video-btn{cursor:pointer}
@@ -185,7 +174,12 @@ a{color:inherit}
 }
 .cta-secondary:hover{border-color:var(--accent);color:var(--accent-lt);background:rgba(0,0,0,.42)}
 
-.section-header{position:relative;text-align:center;padding:4.25rem 2rem 2.5rem;z-index:1}
+.section-header,.discography-header{
+  position:relative;
+  text-align:center;
+  padding:4rem 2rem 2.4rem;
+  z-index:1;
+}
 .section-eyebrow{
   font-family:'Barlow Condensed',serif;
   font-size:.66rem;
@@ -197,7 +191,7 @@ a{color:inherit}
 .section-title{font-family:'Anton',serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:400;color:var(--white);text-transform:uppercase;letter-spacing:.045em}
 .rule{width:78px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);margin:1rem auto 0;opacity:.88}
 
-#latest-single{position:relative;background:var(--mid);padding:4rem 0;border-top:1px solid var(--faded-line);z-index:1}
+#latest-single{position:relative;background:linear-gradient(to bottom,var(--mid),var(--deep));padding:4rem 0;border-top:1px solid var(--faded-line);z-index:1}
 .latest-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:center}
 .latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:var(--radius);box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,.8)}
 .latest-badge,.album-badge{font-family:'Barlow Condensed',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.28rem .85rem;margin-bottom:1.2rem}
@@ -206,10 +200,8 @@ a{color:inherit}
 .latest-play-btn{display:inline-flex;align-items:center;gap:.75rem;background:transparent;color:var(--accent);border:1px solid var(--line);padding:.85rem 2rem;font-family:'Barlow Condensed',serif;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:border-color .2s,background .2s}
 .latest-play-btn:hover{background:var(--accent-glow)}
 
-#albums{position:relative;z-index:1;background:var(--black);padding-bottom:4.5rem}
-.discography-header{text-align:center;padding:4.25rem 2rem 2.6rem;border-top:1px solid var(--faded-line)}
-
-.album-detail-section{padding:0 0 4.75rem}
+#albums{position:relative;z-index:1;background:var(--black);padding-bottom:4rem;border-top:1px solid var(--line)}
+.album-detail-section{padding:0 0 4.5rem}
 .album-layout{
   max-width:1180px;
   margin:0 auto;
@@ -247,17 +239,42 @@ a{color:inherit}
   margin-bottom:1.35rem;
   text-align:center;
 }
+.carousel-shell{
+  position:relative;
+  max-width:1320px;
+  margin:0 auto;
+}
+.carousel-btn{
+  position:absolute;
+  top:40%;
+  transform:translateY(-50%);
+  z-index:5;
+  width:42px;
+  height:72px;
+  border:0;
+  background:rgba(0,0,0,.45);
+  color:var(--accent);
+  font-size:2.4rem;
+  cursor:pointer;
+}
+.carousel-btn.left{left:-18px}
+.carousel-btn.right{right:-18px}
 .release-wall{
   width:100%;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,240px));
-  justify-content:center;
+  display:flex;
   gap:1.7rem;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:0 1rem 1.2rem;
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent) rgba(255,255,255,.08);
 }
 .release-card{
   cursor:pointer;
-  max-width:240px;
+  flex:0 0 235px;
+  max-width:235px;
   text-align:center;
+  scroll-snap-align:center;
 }
 .release-art{
   position:relative;
@@ -267,7 +284,7 @@ a{color:inherit}
   background:var(--black);
   box-shadow:0 16px 42px rgba(0,0,0,.46);
 }
-.release-art img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.84);transition:transform .35s,filter .35s}
+.release-art img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88);transition:transform .35s,filter .35s}
 .release-card:hover img{transform:scale(1.04);filter:brightness(1)}
 .release-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);transition:background .25s}
 .release-card:hover .release-overlay{background:rgba(0,0,0,.38)}
@@ -294,7 +311,7 @@ a{color:inherit}
 #bio{position:relative;background:linear-gradient(to bottom,var(--ink),var(--black));padding-bottom:5rem;border-bottom:1px solid var(--faded-line);z-index:1}
 .bio-inner{max-width:760px;margin:0 auto;padding:0 2rem;text-align:center}
 .bio-logo{margin-bottom:2rem}
-.bio-logo img{height:140px;max-width:min(720px,90vw);object-fit:contain;mix-blend-mode:screen;filter:brightness(1.16) drop-shadow(0 0 18px var(--accent-glow))}
+.bio-logo img{height:150px;max-width:min(760px,90vw);object-fit:contain;mix-blend-mode:screen;filter:brightness(1.16) drop-shadow(0 0 18px var(--accent-glow))}
 .bio-inner p{color:var(--muted);line-height:1.95;font-size:1.02rem;margin-bottom:1.2rem}
 
 .photo-strip{display:grid;grid-template-columns:repeat(3,1fr);height:360px;overflow:hidden;border-top:1px solid var(--line)}
@@ -328,13 +345,13 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
   .nav-left,.nav-right{gap:1rem}
   .nav-left a,.nav-right a{font-size:.64rem}
   .nav-right li:nth-child(2){display:none}
-  .stage{min-height:74vh}
-  .stage-inner{min-height:74vh;padding:5.6rem 1rem 2.2rem}
-  .stage-logo img{width:min(760px,94vw);max-height:250px}
+  .stage{min-height:650px}
+  .stage-inner{min-height:650px;padding:5.6rem 1rem 2.2rem}
+  .stage-logo img{width:min(840px,95vw);max-height:300px}
   .latest-inner,.album-layout{grid-template-columns:1fr}
   .album-layout.reverse{direction:ltr}
-  .release-wall{grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:1rem}
-  .release-card{max-width:none}
+  .release-card{flex-basis:180px;max-width:180px}
+  .carousel-btn{display:none}
   .photo-strip{grid-template-columns:1fr;height:auto}
   .photo-strip img{height:340px}
   #player{grid-template-columns:1fr;padding:.9rem 1rem}
@@ -475,6 +492,11 @@ function renderVideo() {
       <div class="video-play-overlay"><div class="video-play-circle">&#9654;</div></div>
     </div>`;
 }
+function scrollSongs(id, dir) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollBy({left: dir * Math.round(el.clientWidth * .72), behavior:'smooth'});
+}
 function renderAlbums() {
   const root = document.getElementById('albums');
   if (!SONGS.length) {
@@ -493,6 +515,7 @@ function renderAlbums() {
 
   Array.from(albums.entries()).forEach(([album, songs], idx) => {
     const cover = songs.find(s => s.albumCover)?.albumCover || songCover(songs[0]) || '';
+    const carouselId = `songs-${idx}`;
     html += `
     <section class="album-detail-section">
       <div class="album-layout ${idx % 2 ? 'reverse' : ''}">
@@ -514,16 +537,20 @@ function renderAlbums() {
 
         <div class="album-track-art-block">
           <div class="album-track-art-heading">Album Tracks</div>
-          <div class="release-wall">
-            ${songs.map(song => `
-              <div class="release-card" onclick="playSongById('${esc(song.id)}')">
-                <div class="release-art">
-                  <img src="${esc(songCover(song))}" alt="${esc(song.title)}">
-                  <div class="release-overlay"><div class="release-play">&#9654;</div></div>
-                </div>
-                <div class="release-title">${esc(song.title)}</div>
-                <div class="release-album">${esc(song.album || '')}</div>
-              </div>`).join('')}
+          <div class="carousel-shell">
+            <button class="carousel-btn left" onclick="scrollSongs('${carouselId}', -1)">‹</button>
+            <div class="release-wall" id="${carouselId}">
+              ${songs.map(song => `
+                <div class="release-card" onclick="playSongById('${esc(song.id)}')">
+                  <div class="release-art">
+                    <img src="${esc(songCover(song))}" alt="${esc(song.title)}">
+                    <div class="release-overlay"><div class="release-play">&#9654;</div></div>
+                  </div>
+                  <div class="release-title">${esc(song.title)}</div>
+                  <div class="release-album">${esc(song.album || '')}</div>
+                </div>`).join('')}
+            </div>
+            <button class="carousel-btn right" onclick="scrollSongs('${carouselId}', 1)">›</button>
           </div>
         </div>
       </div>
@@ -575,8 +602,8 @@ function checkPhotoStrip() {
   if ([...strip.querySelectorAll('img')].every(img => img.classList.contains('missing'))) strip.classList.add('empty');
 }
 renderLatest();
-renderVideo();
 renderAlbums();
+renderVideo();
 </script>
 </body>
 </html>
