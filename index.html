@@ -453,6 +453,108 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
   text-align:center;
 }
 
+
+/* v2.8 ALBUM PROPORTIONS LOCK */
+.album-detail-section{
+  padding:3.5rem 0 4.75rem;
+}
+
+.album-layout{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 2.5rem;
+  display:grid;
+  grid-template-columns:320px minmax(0,1fr);
+  gap:4rem;
+  align-items:start;
+}
+
+.album-layout.cover-right{
+  grid-template-columns:minmax(0,1fr) 320px;
+}
+
+.album-layout.cover-right .album-cover-wrap{
+  grid-column:2;
+  grid-row:1;
+}
+
+.album-layout.cover-right .album-info{
+  grid-column:1;
+  grid-row:1;
+}
+
+.album-cover-wrap{
+  width:100%;
+  max-width:320px;
+}
+
+.album-cover{
+  width:100%;
+  max-width:320px;
+  aspect-ratio:1;
+  object-fit:cover;
+  display:block;
+}
+
+.album-info{
+  min-width:0;
+  padding-top:.25rem;
+}
+
+.tracklist{
+  margin-top:1.5rem;
+}
+
+.album-track-art-block{
+  grid-column:1/-1;
+  margin-top:2.6rem;
+  padding-top:2rem;
+  border-top:1px solid var(--faded-line);
+}
+
+.album-track-art-heading{
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1.25rem;
+  text-align:left;
+}
+
+.release-wall{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,165px));
+  justify-content:start;
+  gap:1.25rem;
+}
+
+.release-card{
+  cursor:pointer;
+  max-width:165px;
+  text-align:left;
+}
+
+.release-art{
+  position:relative;
+  aspect-ratio:1;
+  border:1px solid var(--faded-line);
+  overflow:hidden;
+  background:var(--black);
+  box-shadow:0 16px 42px rgba(0,0,0,.46);
+}
+
+.release-title{
+  font-size:.92rem;
+  margin-top:.65rem;
+  line-height:1.15;
+}
+
+.release-album{
+  font-size:.55rem;
+  letter-spacing:.12em;
+}
+
 @media(max-width:900px){
   #topnav{padding:0 1.25rem;height:62px}
   .nav-left,.nav-right{gap:1rem}
@@ -628,7 +730,7 @@ function renderAlbums() {
     html += `
     <section class="album-detail-section">
       <div class="album-layout ${idx % 2 ? 'cover-right' : 'cover-left'}">
-        <img class="album-cover" src="${esc(cover)}" alt="${esc(album)}">
+        <div class="album-cover-wrap"><img class="album-cover" src="${esc(cover)}" alt="${esc(album)}"></div>
         <div>
           <div class="album-badge">Album</div>
           <h2 class="album-title">${esc(album)}</h2>
