@@ -3,10 +3,11 @@
 LOCKED RULES:
 - One architecture for all artist sites.
 - Per-artist uniqueness comes from theme, fonts, colors, logo, hero image, and copy.
-- Required folders: images/artist/, images/covers/, images/logos/.
-- Hero image: images/artist/<artist-id>-hero.png, aspect ratio 16:9.
-- Optional photos: images/artist/<artist-id>-photo-1.png through photo-3.png, aspect ratio 3:4.
-- Roster photos live in Hello-Texas-Records/Roster Photos/.
+- Required folders in artist repo: images/covers/, images/logos/.
+- Hero, roster, and gallery photos live in Hello-Texas-Records/Roster Photos/.
+- Hero image: Roster Photos/<artist-id>-hero-photo.png, aspect ratio 16:9.
+- Gallery photos: Roster Photos/<artist-id>-photo-1.png through photo-3.png, aspect ratio 3:4.
+- Roster photo: Roster Photos/<artist-id>-roster-photo.png, aspect ratio 1:1.
 - Album covers: images/covers/<artist-id>-<album-id>-ALBUM-cover.png.
 - Song covers: images/covers/<artist-id>-<song-id>-cover.png.
 - Every song object includes videos: [].
