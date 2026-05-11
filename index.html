@@ -573,15 +573,15 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 .release-wall{
   width:100%;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,165px));
-  justify-content:start;
-  gap:1.25rem;
+  grid-template-columns:repeat(auto-fit,minmax(210px,240px));
+  justify-content:center;
+  gap:1.7rem;
 }
 
 .release-card{
   cursor:pointer;
-  max-width:165px;
-  text-align:left;
+  max-width:240px;
+  text-align:center;
 }
 
 .release-art{
@@ -594,8 +594,8 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 }
 
 .release-title{
-  font-size:.92rem;
-  margin-top:.65rem;
+  font-size:1.08rem;
+  margin-top:.85rem;
   line-height:1.15;
 }
 
@@ -798,14 +798,14 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 
 .release-wall{
   display:grid !important;
-  grid-template-columns:repeat(auto-fit,minmax(145px,165px)) !important;
-  justify-content:start !important;
-  gap:1.25rem !important;
+  grid-template-columns:repeat(auto-fit,minmax(210px,240px)) !important;
+  justify-content:center !important;
+  gap:1.7rem !important;
 }
 
 .release-card{
-  max-width:165px !important;
-  text-align:left !important;
+  max-width:240px !important;
+  text-align:center !important;
 }
 
 @media(max-width:900px){
@@ -828,8 +828,8 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
   .latest-inner,.album-layout,.album-layout.cover-right{grid-template-columns:1fr}
   .album-layout.cover-right .album-cover-wrap,.album-layout.cover-right .album-info{grid-column:auto;grid-row:auto}
 
-  .release-wall{grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:1rem}
-  .release-card{max-width:none}
+  .release-wall{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.15rem;justify-content:center}
+  .release-card{max-width:none;text-align:center}
   #albums,.lower-video-section{background-attachment:scroll}
   .photo-strip{grid-template-columns:1fr;height:auto}
   .photo-strip img{height:340px}
