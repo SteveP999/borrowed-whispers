@@ -7,6 +7,8 @@
     "album": "I Still Remember",
     "trackNumber": 1,
     "albumOrder": 1,
+    "albumSortOrder": 9999,
+    "sourceOrder": 1,
     "albumCover": "images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png",
     "type": "single",
     "isLatest": true,
