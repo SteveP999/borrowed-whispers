@@ -203,17 +203,17 @@ a{color:inherit}
 #latest-single{
   position:relative;
   background:linear-gradient(135deg,var(--mid),var(--ink));
-  padding:4rem 0;
+  padding:1.65rem 0;
   border-top:1px solid var(--faded-line);
   border-bottom:1px solid var(--faded-line);
   z-index:1;
 }
-.latest-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:center}
-.latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:var(--radius);box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,.8)}
-.latest-badge,.album-badge{font-family:'Barlow Condensed',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.28rem .85rem;margin-bottom:1.2rem}
-.latest-title{font-family:'Bebas Neue',serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:400;color:var(--white);line-height:1.12;margin-bottom:.4rem;text-transform:uppercase}
-.latest-sub,.album-artist{font-family:'Barlow Condensed',serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
-.latest-play-btn{display:inline-flex;align-items:center;gap:.75rem;background:transparent;color:var(--accent);border:1px solid var(--line);padding:.85rem 2rem;font-family:'Barlow Condensed',serif;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:border-color .2s,background .2s}
+.latest-inner{max-width:1040px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:170px 1fr;gap:1.75rem;align-items:center}
+.latest-cover{width:100%;max-width:170px;aspect-ratio:1;object-fit:cover;display:block;border-radius:var(--radius);box-shadow:0 0 28px var(--accent-glow),0 12px 34px rgba(0,0,0,.68)}
+.latest-badge,.album-badge{font-family:'Barlow Condensed',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.24rem .75rem;margin-bottom:.65rem}
+.latest-title{font-family:'Bebas Neue',serif;font-size:clamp(1.55rem,2.8vw,2.35rem);font-weight:400;color:var(--white);line-height:1.05;margin-bottom:.18rem;text-transform:uppercase}
+.latest-sub,.album-artist{font-family:'Barlow Condensed',serif;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem}
+.latest-play-btn{display:inline-flex;align-items:center;gap:.65rem;background:transparent;color:var(--accent);border:1px solid var(--line);padding:.58rem 1.35rem;font-family:'Barlow Condensed',serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:border-color .2s,background .2s}
 .latest-play-btn:hover{background:var(--accent-glow)}
 
 #albums{
@@ -378,17 +378,21 @@ a{color:inherit}
 .photo-strip.empty{display:none}
 
 .video-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
   padding:1.5rem;
+  max-width:920px;
+  margin:0 auto;
 }
 .video-card{
   display:block;
+  width:100%;
   text-decoration:none;
   color:inherit;
   border:1px solid var(--line);
   background:rgba(0,0,0,.22);
+  box-shadow:0 22px 80px rgba(0,0,0,.42);
   transition:transform .2s,border-color .2s,background .2s;
 }
 .video-card:hover{
@@ -409,9 +413,9 @@ a{color:inherit}
 }
 .video-card-title{
   font-family:'Bebas Neue',serif;
-  font-size:1.2rem;
+  font-size:clamp(1.35rem,2.2vw,1.85rem);
   color:var(--white);
-  padding:1rem 1rem .15rem;
+  padding:1.15rem 1.25rem .2rem;
   text-transform:uppercase;
 }
 .video-card-actions{
@@ -844,11 +848,18 @@ footer{
   .stage{min-height:74vh}
   .stage-inner{min-height:74vh;padding:5.6rem 1rem 2.2rem}
   .stage-logo img{width:min(620px,96vw);max-height:243px}
-  .latest-inner,.album-layout,.album-layout.cover-right{grid-template-columns:1fr}
+  .latest-inner{grid-template-columns:118px minmax(0,1fr);gap:1rem;padding:0 1rem}
+  .latest-cover{max-width:118px}
+  .latest-title{font-size:clamp(1.25rem,6vw,1.8rem)}
+  .latest-sub{margin-bottom:.65rem}
+  .latest-play-btn{padding:.5rem .95rem;font-size:.62rem}
+  .album-layout,.album-layout.cover-right{grid-template-columns:1fr}
   .album-layout.cover-right .album-cover-wrap,.album-layout.cover-right .album-info{grid-column:auto;grid-row:auto}
 
   .release-wall{grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:1rem}
   .release-card{max-width:none}
+  .video-grid{padding:1rem;gap:1.35rem}
+  .feature-video{width:min(920px,96vw)}
   #albums,.lower-video-section,#bio,.photo-strip,footer{background-attachment:scroll}
   .photo-strip{grid-template-columns:1fr;height:auto}
   .photo-strip img{height:340px}
