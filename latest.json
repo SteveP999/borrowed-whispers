@@ -3,8 +3,8 @@
   "artist": "Borrowed Whispers",
   "album": "I Still Remember",
   "type": "Latest Single",
-  "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png",
-  "image": "images/covers/borrowed-whispers-still-falling-for-you-cover.png",
+  "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-still-falling-for-you-cover.png",
+  "image": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-still-falling-for-you-cover.png",
   "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1",
   "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1",
   "videos": []

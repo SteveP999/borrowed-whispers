@@ -1,3 +1,4 @@
 @echo off
 cd /d "%~dp0"
-powershell -NoExit -ExecutionPolicy Bypass -File "%~dp0update.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0update.ps1"
+exit /b %ERRORLEVEL%
