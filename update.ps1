@@ -65,6 +65,8 @@ try {
 
     Write-Both ""
     Write-Both "Syncing remote before commit..."
+    # Remove locally-created CNAME if GitHub already has one to avoid merge conflict
+    if (Test-Path "CNAME") {{ Remove-Item "CNAME" -Force }}
     git pull origin main --allow-unrelated-histories --no-rebase -X ours 2>&1 | Tee-Object -FilePath $LogPath -Append
     Check-Git "git pull"
 
