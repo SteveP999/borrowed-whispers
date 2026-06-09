@@ -932,6 +932,10 @@ footer{background:linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.52)),var
       <button class="p-btn" onclick="nextTrack()">&#9654;&#9654;</button>
     </div>
     <div class="progress-wrap" onclick="seek(event)"><div id="progress-fill" class="progress-fill"></div></div>
+    <div style="display:flex;justify-content:space-between;width:100%;max-width:520px">
+      <span id="p-current" style="font-family:monospace;font-size:.55rem;color:var(--muted);opacity:.7">0:00</span>
+      <span id="p-duration" style="font-family:monospace;font-size:.55rem;color:var(--muted);opacity:.7">0:00</span>
+    </div>
   </div>
   <div class="p-extra"><input id="volume" type="range" min="0" max="1" step="0.01" value="0.85"></div>
 </div>
@@ -1130,6 +1134,8 @@ function playIndex(idx) {
   document.getElementById('player').classList.add('visible');
   audio.play();
   document.getElementById('p-playbtn').innerHTML = '&#10074;&#10074;';
+  // Tell HTR Radio to pause when artist site plays
+  try { new BroadcastChannel('htr-audio').postMessage({type:'artist-play'}); } catch(e) {}
 }
 function togglePlay() {
   if (!audio.src) return playLatest();
@@ -1146,6 +1152,11 @@ function seek(e) {
 audio.addEventListener('timeupdate', () => {
   const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
   document.getElementById('progress-fill').style.width = pct + '%';
+  const fmt = s => Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+  const cur = document.getElementById('p-current');
+  const dur = document.getElementById('p-duration');
+  if (cur) cur.textContent = fmt(audio.currentTime);
+  if (dur && audio.duration) dur.textContent = fmt(audio.duration);
 });
 audio.addEventListener('ended', nextTrack);
 document.getElementById('volume').addEventListener('input', e => audio.volume = e.target.value);
