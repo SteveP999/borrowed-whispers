@@ -14,24 +14,24 @@ gtag('config', 'G-4PCFSEQJZ1');
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=block" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---black:#0A0805;--ink:#131009;--deep:#1A1510;--mid:#221C12;
---accent:#C8922A;--accent-lt:#E8AD4A;--cream:#F2EBD8;--muted:#8A7E68;--white:#F8F2E4;
+--black:#07090F;--ink:#0D1220;--deep:#141C2E;--mid:#1A2440;
+--accent:#7BA3CC;--accent-lt:#A8C4DF;--cream:#CDD8E8;--muted:#8A9BB0;--white:#EEF2F7;
 --accent-glow:color-mix(in srgb, var(--accent) 28%, transparent);
 --line:color-mix(in srgb, var(--accent) 32%, transparent);
 --discography-bg:url('images/artist/borrowed-whispers-discography-bg.png');
 --video-bg:url('images/artist/borrowed-whispers-video-bg.png');
 --faded-line:color-mix(in srgb, var(--accent) 14%, transparent);
---radius:0px;
+--radius:4px;
 }
 html{scroll-behavior:smooth}
 body{
   background:var(--black);
   color:var(--cream);
-  font-family:'Barlow',sans-serif;
+  font-family:'Jost',sans-serif;
   font-weight:300;
   font-size:15px;
   line-height:1.75;
@@ -78,7 +78,7 @@ a{color:inherit}
   color:var(--cream);
   opacity:.82;
   text-decoration:none;
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.78rem;
   letter-spacing:.21em;
   text-transform:uppercase;
@@ -132,18 +132,18 @@ a{color:inherit}
 }
 .stage-title-fallback{
   display:none;
-  font-family:'Bebas Neue',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:clamp(4rem,9vw,8rem);
   line-height:.95;
   color:var(--white);
-  text-transform:uppercase;
+  text-transform:none;
   letter-spacing:.06em;
   margin-bottom:1.2rem;
 }
 .stage-tag{
   margin-top:1.1rem;
   color:var(--accent);
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.72rem;
   letter-spacing:.36em;
   text-transform:uppercase;
@@ -152,7 +152,7 @@ a{color:inherit}
   max-width:760px;
   margin:.4rem auto 1.1rem;
   color:var(--cream);
-  font-family:'Bebas Neue',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:clamp(1.1rem,2vw,1.65rem);
   font-style:italic;
   opacity:.92;
@@ -165,7 +165,7 @@ a{color:inherit}
   color:var(--black);
   border:none;
   padding:.9rem 2.2rem;
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.8rem;
   font-weight:700;
   letter-spacing:.18em;
@@ -180,7 +180,7 @@ a{color:inherit}
   padding:.9rem 2.2rem;
   text-decoration:none;
   display:inline-block;
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.8rem;
   letter-spacing:.18em;
   text-transform:uppercase;
@@ -190,14 +190,14 @@ a{color:inherit}
 
 .section-header{position:relative;text-align:center;padding:4.25rem 2rem 2.5rem;z-index:1}
 .section-eyebrow{
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.66rem;
   letter-spacing:.32em;
   text-transform:uppercase;
   color:var(--accent);
   margin-bottom:.85rem;
 }
-.section-title{font-family:'Bebas Neue',serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:400;color:var(--white);text-transform:uppercase;letter-spacing:.045em}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:400;color:var(--white);text-transform:none;letter-spacing:.045em}
 .rule{width:78px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);margin:1rem auto 0;opacity:.88}
 
 #latest-single{
@@ -210,10 +210,10 @@ a{color:inherit}
 }
 .latest-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:center}
 .latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:var(--radius);box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,.8)}
-.latest-badge,.album-badge{font-family:'Barlow Condensed',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.28rem .85rem;margin-bottom:1.2rem}
-.latest-title{font-family:'Bebas Neue',serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:400;color:var(--white);line-height:1.12;margin-bottom:.4rem;text-transform:uppercase}
-.latest-sub,.album-artist{font-family:'Barlow Condensed',serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
-.latest-play-btn{display:inline-flex;align-items:center;gap:.75rem;background:transparent;color:var(--accent);border:1px solid var(--line);padding:.85rem 2rem;font-family:'Barlow Condensed',serif;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:border-color .2s,background .2s}
+.latest-badge,.album-badge{font-family:'Cormorant Garamond',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.28rem .85rem;margin-bottom:1.2rem}
+.latest-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:400;color:var(--white);line-height:1.12;margin-bottom:.4rem;text-transform:none}
+.latest-sub,.album-artist{font-family:'Cormorant Garamond',serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
+.latest-play-btn{display:inline-flex;align-items:center;gap:.75rem;background:transparent;color:var(--accent);border:1px solid var(--line);padding:.85rem 2rem;font-family:'Cormorant Garamond',serif;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:border-color .2s,background .2s}
 .latest-play-btn:hover{background:var(--accent-glow)}
 
 #albums{
@@ -304,8 +304,8 @@ a{color:inherit}
 .release-card:hover .release-overlay{background:rgba(0,0,0,.38)}
 .release-play{width:48px;height:48px;border:2px solid var(--accent);background:rgba(0,0,0,.65);color:var(--accent);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.86);transition:opacity .25s,transform .25s}
 .release-card:hover .release-play{opacity:1;transform:scale(1)}
-.release-title{font-family:'Bebas Neue',serif;font-size:1.08rem;color:var(--white);line-height:1.15;margin-top:.85rem;text-transform:uppercase}
-.release-album{font-family:'Barlow Condensed',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.release-title{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--white);line-height:1.15;margin-top:.85rem;text-transform:none}
+.release-album{font-family:'Cormorant Garamond',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
 
 .lower-video-section{
   position:relative;
@@ -342,7 +342,7 @@ a{color:inherit}
 }
 .video-coming-soon.visible{display:flex}
 .video-coming-soon .play-triangle{width:0;height:0;border-top:28px solid transparent;border-bottom:28px solid transparent;border-left:46px solid var(--accent);opacity:.9;margin-bottom:1.6rem;filter:drop-shadow(0 0 18px var(--accent-glow))}
-.video-coming-soon strong{font-family:'Bebas Neue',serif;font-size:1.65rem;font-weight:400;color:var(--white);margin-bottom:.55rem;text-transform:uppercase}
+.video-coming-soon strong{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--white);margin-bottom:.55rem;text-transform:none}
 .video-coming-soon span{color:var(--muted);font-size:.92rem;max-width:560px;text-align:center}
 
 #bio{
@@ -398,17 +398,17 @@ a{color:inherit}
   display:block;
 }
 .video-card-title{
-  font-family:'Bebas Neue',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:1.2rem;
   color:var(--white);
   padding:1rem 1rem .15rem;
-  text-transform:uppercase;
+  text-transform:none;
 }
 .video-card-actions{
   padding:.45rem 1rem 1rem;
 }
 .video-card-sub{
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.62rem;
   letter-spacing:.22em;
   text-transform:uppercase;
@@ -420,7 +420,7 @@ a{color:inherit}
 #player.visible{display:grid;transform:translateY(0)}
 .p-info{display:flex;align-items:center;gap:1rem;min-width:0}
 .p-thumb{width:42px;height:42px;object-fit:cover;flex-shrink:0;border:1px solid var(--line)}
-.p-title{font-family:'Bebas Neue',serif;font-size:1rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-title{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .p-sub{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.7}
 .p-controls{display:flex;align-items:center;flex-direction:column;flex:1;gap:.5rem;min-width:0}
 .p-btn-row{display:flex;align-items:center;gap:1.2rem}
@@ -494,7 +494,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
   border-top:1px solid var(--faded-line);
 }
 .album-track-art-heading{
-  font-family:'Barlow Condensed',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:.72rem;
   letter-spacing:.32em;
   text-transform:uppercase;
@@ -877,7 +877,7 @@ footer{background:linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.52)),var
   <div class="stage-inner">
     <div class="stage-logo"><img src="images/logos/borrowed-whispers-logo.png" alt="Borrowed Whispers logo" onerror="this.style.display='none';document.getElementById('stage-fallback').style.display='block';"></div>
     <h1 id="stage-fallback" class="stage-title-fallback">Borrowed Whispers</h1>
-    <div class="stage-tag">Hello Texas Records · Country</div>
+    <div class="stage-tag">Hello Texas Records · New Age</div>
     <p class="stage-tagline">Two old friends and a decade of unfinished songs</p>
     <div class="stage-actions">
       <button class="cta-primary" onclick="playLatest()">Listen Now</button>
@@ -942,7 +942,7 @@ footer{background:linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.52)),var
 </div>
 
 <audio id="audio"></audio>
-<script id="artist-data" type="application/json">{"artist": {"id": "borrowed-whispers", "name": "Borrowed Whispers", "genre": "70s-80s Soft Rock, Soul", "tagline": "Two old friends and a decade of unfinished songs", "bio": "Two old friends and a decade of unfinished songs", "theme": "rock", "logo": "images/logos/borrowed-whispers-logo.png", "hero": "images/artist/borrowed-whispers-hero-photo.png", "discographyBg": "images/artist/borrowed-whispers-discography-bg.png", "videoBg": "images/artist/borrowed-whispers-video-bg.png", "photos": ["images/artist/borrowed-whispers-photo-1.png", "images/artist/borrowed-whispers-photo-2.png", "images/artist/borrowed-whispers-photo-3.png"]}, "latest": {"title": "Two Tickets to Anywhere", "artist": "Borrowed Whispers", "album": "I Still Remember", "type": "Latest Single", "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png", "image": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png", "audio": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "videos": []}, "songs": [{"id": "borrowed-whispers-if-i-could-love-you-again", "num": "01", "title": "If I Could Love You Again", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 1, "albumOrder": 1, "albumCover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "album track", "isLatest": false, "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-if-i-could-love-you-again-cover.png", "audio": "https://www.dropbox.com/scl/fi/r2ph0eaje07tqmz1kxbeo/borrowed-whispers-if-i-could-love-you-again-mp3.mp3?rlkey=9nmgyjhpmi6nor9d7ap31edj8&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/r2ph0eaje07tqmz1kxbeo/borrowed-whispers-if-i-could-love-you-again-mp3.mp3?rlkey=9nmgyjhpmi6nor9d7ap31edj8&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "borrowed-whispers-still-falling-for-you", "num": "02", "title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 2, "albumOrder": 2, "albumCover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": false, "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}, {"id": "borrowed-whispers-two-tickets-to-anywhere", "num": "03", "title": "Two Tickets to Anywhere", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 3, "albumOrder": 3, "albumCover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": true, "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png", "audio": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
+<script id="artist-data" type="application/json">{"artist": {"id": "borrowed-whispers", "name": "Borrowed Whispers", "genre": "70s-80s Soft Rock, Soul", "tagline": "Two old friends and a decade of unfinished songs", "bio": "Two old friends and a decade of unfinished songs", "theme": "new_age_blue", "logo": "images/logos/borrowed-whispers-logo.png", "hero": "images/artist/borrowed-whispers-hero-photo.png", "discographyBg": "images/artist/borrowed-whispers-discography-bg.png", "videoBg": "images/artist/borrowed-whispers-video-bg.png", "photos": ["images/artist/borrowed-whispers-photo-1.png", "images/artist/borrowed-whispers-photo-2.png", "images/artist/borrowed-whispers-photo-3.png"]}, "latest": {"title": "Two Tickets to Anywhere", "artist": "Borrowed Whispers", "album": "I Still Remember", "type": "Latest Single", "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png", "image": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png", "audio": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "videos": []}, "songs": [{"id": "borrowed-whispers-if-i-could-love-you-again", "num": "01", "title": "If I Could Love You Again", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 1, "albumOrder": 1, "albumCover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "album track", "isLatest": false, "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-if-i-could-love-you-again-cover.png", "audio": "https://www.dropbox.com/scl/fi/r2ph0eaje07tqmz1kxbeo/borrowed-whispers-if-i-could-love-you-again-mp3.mp3?rlkey=9nmgyjhpmi6nor9d7ap31edj8&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/r2ph0eaje07tqmz1kxbeo/borrowed-whispers-if-i-could-love-you-again-mp3.mp3?rlkey=9nmgyjhpmi6nor9d7ap31edj8&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "borrowed-whispers-still-falling-for-you", "num": "02", "title": "Still Falling For You", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 2, "albumOrder": 2, "albumCover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": false, "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-still-falling-for-you-cover.png", "audio": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}, {"id": "borrowed-whispers-two-tickets-to-anywhere", "num": "03", "title": "Two Tickets to Anywhere", "artist": "Borrowed Whispers", "album": "I Still Remember", "trackNumber": 3, "albumOrder": 3, "albumCover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-i-still-remember-ALBUM-cover.png", "type": "single", "isLatest": true, "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png", "audio": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('artist-data').textContent);
 const SONGS = DATA.songs || [];
