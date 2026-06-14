@@ -963,6 +963,80 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 footer{background:linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.52)),var(--video-bg) center center / cover fixed no-repeat,transparent!important;padding:2.35rem 2rem 2.75rem!important;}
 } /* end @media min-width:601px */
 
+/* ═══ PHONE FINAL OVERRIDE (max-width:600px) - wins over everything ═══ */
+@media only screen and (max-width:600px){
+  /* Album layout - force flex column for ALL variants */
+  .album-layout{
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:unset!important;
+    gap:1.25rem!important;
+  }
+  .album-cover-wrap{
+    order:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    grid-column:unset!important;
+    grid-row:unset!important;
+    float:none!important;
+  }
+  .album-cover{
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    display:block!important;
+  }
+  .album-info{
+    order:1!important;
+    width:100%!important;
+    padding:0!important;
+    grid-column:unset!important;
+    grid-row:unset!important;
+    float:none!important;
+  }
+  /* Track list */
+  .track-row{
+    grid-template-columns:28px 1fr 44px!important;
+    gap:.5rem!important;
+    padding:.65rem .5rem!important;
+    min-height:44px!important;
+  }
+  .track-badge-cell,.track-duration{display:none!important}
+  .track-title{
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    max-width:calc(100vw - 100px)!important;
+    font-size:.88rem!important;
+  }
+  /* Song cards - 2 columns */
+  .release-wall{
+    display:grid!important;
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:.75rem!important;
+    padding:0 1rem!important;
+    width:100%!important;
+  }
+  .release-card{
+    max-width:100%!important;
+    width:100%!important;
+  }
+  /* Latest single */
+  .latest-inner{
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:unset!important;
+    padding:0 1rem!important;
+    gap:1.25rem!important;
+  }
+  .latest-cover{
+    max-width:100%!important;
+    width:100%!important;
+    order:0!important;
+  }
+  .latest-info{order:1!important;width:100%!important}
+}
+
 </style>
 </head>
 <body>
