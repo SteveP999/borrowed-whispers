@@ -212,6 +212,15 @@ a{color:inherit}
 .latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:var(--radius);box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,.8)}
 .latest-badge,.album-collapse-header{transition:opacity .2s}.album-collapse-header:hover{opacity:.85}
 .album-collapse-body{}
+.album-cover-wrap{position:relative}
+.now-playing-art{margin-top:1.25rem;border:1px solid var(--accent);padding:.75rem}
+.now-playing-label{font-family:'Cormorant Garamond',serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.now-playing-img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.now-playing-title{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--white);margin-top:.6rem;text-align:center}
+.album-header-row{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.album-header-row .album-badge{margin-bottom:0;flex-shrink:0}
+.album-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:400;color:var(--white);line-height:1.15;margin-bottom:0}
+.album-artist-inline{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .album-badge{font-family:'Cormorant Garamond',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.28rem .85rem;margin-bottom:1.2rem}
 .latest-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:400;color:var(--white);line-height:1.12;margin-bottom:.4rem;text-transform:none}
 .latest-sub,.album-artist{font-family:'Cormorant Garamond',serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
@@ -1134,6 +1143,40 @@ function esc(value) {
   return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
 }
 function songCover(song) { return song.cover || song.albumCover || ''; }
+
+function updateNowPlayingArt(song) {
+  // Find which album this song belongs to and show its art
+  const cover = song.cover || '';
+  const albumSlug = (song.album || '').replace(/[^a-z0-9]/gi,'_').toLowerCase();
+
+  // Hide all now-playing blocks first
+  document.querySelectorAll('.now-playing-art').forEach(el => el.style.display = 'none');
+
+  if (!cover) return;
+
+  // Show block for this album
+  const block = document.getElementById('now-playing-art-' + albumSlug);
+  const img   = document.getElementById('now-playing-img-' + albumSlug);
+  const title = document.getElementById('now-playing-title-' + albumSlug);
+
+  if (block && img) {
+    img.src = cover;
+    if (title) title.textContent = song.title || '';
+    block.style.display = 'block';
+
+    // Expand album if collapsed, then scroll to it
+    const body = document.getElementById('album-body-' + albumSlug);
+    if (body && body.style.display === 'none') {
+      const chevron = document.getElementById('chevron-' + albumSlug);
+      body.style.display = '';
+      if (chevron) chevron.style.transform = 'rotate(0deg)';
+    }
+    // Scroll Now Playing art into view
+    setTimeout(() => {
+      block.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 120);
+  }
+}
 function videoUrl(song) {
   const videos = Array.isArray(song.videos) ? song.videos : [];
   if (!videos.length) return '';
@@ -1285,13 +1328,20 @@ function renderAlbums() {
         <div id="album-body-${albumSlug}" class="album-collapse-body">
         <div class="album-layout ${sideClass}">
           <div class="album-cover-wrap">
-            <img class="album-cover" src="${esc(cover)}" alt="${esc(album)}">
+            <img class="album-cover" id="album-cover-${albumSlug}" src="${esc(cover)}" alt="${esc(album)}">
+            <div class="now-playing-art" id="now-playing-art-${albumSlug}" style="display:none">
+              <div class="now-playing-label">&#9654; Now Playing</div>
+              <img class="now-playing-img" id="now-playing-img-${albumSlug}" src="" alt="">
+              <div class="now-playing-title" id="now-playing-title-${albumSlug}"></div>
+            </div>
           </div>
 
           <div class="album-info">
-            <div class="album-badge">Album</div>
-            <h2 class="album-title">${esc(album)}</h2>
-            <div class="album-artist">${esc(DATA.artist.name)}</div>
+            <div class="album-header-row">
+              <span class="album-badge">Album</span>
+              <h2 class="album-title">${esc(album)}</h2>
+              <span class="album-artist-inline">${esc(DATA.artist.name)}</span>
+            </div>
             <div class="tracklist">${trackRows}</div>
           </div>
 
@@ -1335,6 +1385,8 @@ function playIndex(idx) {
   document.getElementById('player').classList.add('visible');
   audio.play();
   document.getElementById('p-playbtn').innerHTML = '&#10074;&#10074;';
+  // Show song art in the album section
+  updateNowPlayingArt(song);
   // Tell HTR Radio to pause when artist site plays
   try { new BroadcastChannel('htr-audio').postMessage({type:'artist-play'}); } catch(e) {}
 }
