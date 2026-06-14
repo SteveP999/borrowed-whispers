@@ -216,6 +216,10 @@ a{color:inherit}
 .now-playing-art{margin-top:1.25rem;border:1px solid var(--accent);padding:.75rem}
 .now-playing-label{font-family:'Cormorant Garamond',serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 .now-playing-img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.now-playing-controls{display:flex;justify-content:center;align-items:center;gap:1.25rem;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--line)}
+.np-ctrl-btn{background:none;border:1px solid var(--line);color:var(--accent);font-size:1rem;width:48px;height:48px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;border-radius:2px}
+.np-ctrl-btn:hover{background:var(--accent);color:var(--black);border-color:var(--accent)}
+.np-play-pause{width:56px;height:56px;font-size:1.15rem;border-color:var(--accent)}
 .now-playing-title{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--white);margin-top:.6rem;text-align:center}
 .album-header-row{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;margin-bottom:1.1rem}
 .album-header-row .album-badge{margin-bottom:0;flex-shrink:0}
@@ -1333,6 +1337,11 @@ function renderAlbums() {
               <div class="now-playing-label">&#9654; Now Playing</div>
               <img class="now-playing-img" id="now-playing-img-${albumSlug}" src="" alt="">
               <div class="now-playing-title" id="now-playing-title-${albumSlug}"></div>
+              <div class="now-playing-controls">
+                <button class="np-ctrl-btn" onclick="prevTrack()" title="Previous">&#9664;&#9664;</button>
+                <button class="np-ctrl-btn np-play-pause" id="np-playpause-${albumSlug}" onclick="togglePlay()" title="Play/Pause">&#10074;&#10074;</button>
+                <button class="np-ctrl-btn" onclick="nextTrack()" title="Next">&#9654;&#9654;</button>
+              </div>
             </div>
           </div>
 
@@ -1387,13 +1396,23 @@ function playIndex(idx) {
   document.getElementById('p-playbtn').innerHTML = '&#10074;&#10074;';
   // Show song art in the album section
   updateNowPlayingArt(song);
+  // Sync Now Playing play/pause button
+  document.querySelectorAll('.np-play-pause').forEach(btn => btn.innerHTML = '&#10074;&#10074;');
   // Tell HTR Radio to pause when artist site plays
   try { new BroadcastChannel('htr-audio').postMessage({type:'artist-play'}); } catch(e) {}
 }
 function togglePlay() {
   if (!audio.src) return playLatest();
-  if (audio.paused) { audio.play(); document.getElementById('p-playbtn').innerHTML='&#10074;&#10074;'; }
-  else { audio.pause(); document.getElementById('p-playbtn').innerHTML='&#9654;'; }
+  const playing = !audio.paused;
+  if (!playing) {
+    audio.play();
+    document.getElementById('p-playbtn').innerHTML='&#10074;&#10074;';
+    document.querySelectorAll('.np-play-pause').forEach(b=>b.innerHTML='&#10074;&#10074;');
+  } else {
+    audio.pause();
+    document.getElementById('p-playbtn').innerHTML='&#9654;';
+    document.querySelectorAll('.np-play-pause').forEach(b=>b.innerHTML='&#9654;');
+  }
 }
 function nextTrack() { if (SONGS.length) playIndex((currentIndex + 1) % SONGS.length); }
 function prevTrack() { if (SONGS.length) playIndex((currentIndex - 1 + SONGS.length) % SONGS.length); }
@@ -1411,7 +1430,7 @@ audio.addEventListener('timeupdate', () => {
   if (cur) cur.textContent = fmt(audio.currentTime);
   if (dur && audio.duration) dur.textContent = fmt(audio.duration);
 });
-audio.addEventListener('ended', nextTrack);
+audio.addEventListener('ended', () => { document.querySelectorAll('.np-play-pause').forEach(b=>b.innerHTML='&#9654;'); nextTrack(); });
 document.getElementById('volume').addEventListener('input', e => audio.volume = e.target.value);
 function checkPhotoStrip() {
   const strip = document.getElementById('photo-strip');
