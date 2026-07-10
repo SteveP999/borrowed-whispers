@@ -3,8 +3,8 @@
   "artist": "Borrowed Whispers",
   "album": "I Still Remember",
   "type": "Latest Single",
-  "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
-  "image": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
+  "cover": "images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
+  "image": "images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
   "audio": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1",
   "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1",
   "videos": []

@@ -5,7 +5,7 @@
     "title": "Two Tickets to Anywhere",
     "artist": "Borrowed Whispers",
     "album": "I Still Remember",
-    "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
+    "cover": "images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
     "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1",
     "videos": []
   },
@@ -14,7 +14,7 @@
       "title": "If I Could Love You Again",
       "artist": "Borrowed Whispers",
       "album": "I Still Remember",
-      "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-if-i-could-love-you-again-cover.png",
+      "cover": "images/covers/borrowed-whispers-if-i-could-love-you-again-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/r2ph0eaje07tqmz1kxbeo/borrowed-whispers-if-i-could-love-you-again-mp3.mp3?rlkey=9nmgyjhpmi6nor9d7ap31edj8&raw=1",
       "videos": []
     },
@@ -22,7 +22,7 @@
       "title": "Still Falling For You",
       "artist": "Borrowed Whispers",
       "album": "I Still Remember",
-      "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-still-falling-for-you-cover.png",
+      "cover": "images/covers/borrowed-whispers-still-falling-for-you-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/o8s2z0p87bo8zgl47k0da/Borrowed-Whispers-Still-Falling-for-You-H-O-Version-KEEPER.mp3?rlkey=wc4ww26y1yex5dj9g1bct8712&raw=1",
       "videos": []
     },
@@ -30,7 +30,7 @@
       "title": "Two Tickets to Anywhere",
       "artist": "Borrowed Whispers",
       "album": "I Still Remember",
-      "cover": "https://raw.githubusercontent.com/SteveP999/borrowed-whispers/main/images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
+      "cover": "images/covers/borrowed-whispers-two-tickets-to-anywhere-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/jt4q6r584hpndky1sv025/borrowed-whispers-two-tickets-to-anywhere-mp3.mp3?rlkey=xlpr07uuh3boipz7yxhi26jfv&raw=1",
       "videos": []
     }
